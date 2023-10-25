@@ -7,27 +7,27 @@ def main():
         print("3. Quit")
         print()
 
-    menu()
-    input = input("Please enter an option: ")
+    while True:
+        menu()
+        input = input("Please enter an option: ")
 
-    def encode():
-        global password
-        password = input("Please enter your password to encode: ")
-        global encoded_password
-        encoded_password = ""
-        for num in password:
-            new_num = int(num) + 3
-            if new_num > 10:
-                new_num -= 10
-            encoded_password += str(new_num)
+        def encode(password):
+            global encoded_password
+            encoded_password = ""
+            for num in password:
+                new_num = int(num) + 3
+                if new_num > 10:
+                    new_num -= 10
+                encoded_password += str(new_num)
 
 
-    if input == "1":
-        encode()
-        print("Your password has been encoded and stored!")
+        if input == "1":
+            password = input("Please enter your password to encode: ")
+            encode(password)
+            print("Your password has been encoded and stored!")
 
-    elif input == "2":
+        elif input == "2":
 
-        print(f"The encoded password is {encoded_password}, and the original password is {password}.")
+            print(f"The encoded password is {encoded_password}, and the original password is {password}.")
 
-    elif input == "3":
+        elif input == "3":
