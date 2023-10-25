@@ -17,6 +17,8 @@ def main():
         encoded_password = ""
         for num in password:
             new_num = int(num) + 3
+            if new_num > 10:
+                new_num -= 10
             encoded_password += str(new_num)
 
 
@@ -25,6 +27,7 @@ def main():
         print("Your password has been encoded and stored!")
 
     elif input == "2":
+
         print(f"The encoded password is {encoded_password}, and the original password is {password}.")
 
     elif input == "3":
